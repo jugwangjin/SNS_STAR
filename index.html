@@ -1,0 +1,21 @@
+<!-- var params = { allowScriptAccess: "always" };
+var atts = { id: "player1" };
+swfobject.embedSWF("http://www.youtube.com/v/wSqdIXPnf-I?enablejsapi=1&playerapiid=player1&version=3",
+           "player1-container", "425", "356", "8", null, null, params, atts);
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id='videoholder' width=1000 height=800></div>
+        <br>
+        <div id='buttonsholder' width=400 height=200>
+            <button class='choicebutton' id = 'choicebutton1' width=150 height=50>1</button>
+            <button class='choicebutton' id = 'choicebutton2' width=150 height=50>2</button>
+        </div>  
+    <script type="text/javascript" src="scripts/flow.js"></script>
+    <script type="text/javascript" src="scripts/youtube.js" id='youtubescript'></script>
+    </body>
+</html>
