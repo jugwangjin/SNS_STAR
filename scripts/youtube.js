@@ -206,4 +206,5 @@ var choicebuttons = $(".choicebutton");
 for (var i=0; i<choicebuttons.length; i++){
     choicebuttons[i].addEventListener('click', choiceButtonClick);
 }
+$("#startbutton").addEventListener('click', initiallizeVideo);
 
