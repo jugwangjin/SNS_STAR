@@ -46,25 +46,43 @@ function initiallizeVideo(){
         }
     }, 100);
 }
+function initiallizePage(){
+    $("#greeting").show();
+    $("#ending").hide();
+    $("#currentvideo").remove();
+    $("#choice1video").remove();
+    $("#choice2video").remove();
+}
 
 function checkPlayTime(){
     var currenttarget = targets['currentvideo'];
     var currentDuration = currenttarget.getDuration();
     var timeToShowButton = currentDuration - 11;
     var timeToChangeVideo = currentDuration - 1;
-    checkInt = setInterval(function(){
-        var curtime = currenttarget.getCurrentTime();
-        if (curtime >= timeToShowButton){
-            showButtons();
-            timeslider.width(((timeToChangeVideo-curtime)*10)+'%');
-            if(curtime >= timeToChangeVideo){
-                makeCurrent(1);
-                clearInterval(checkInt); 
+    if(flow[currentvideonum].isEnding==false){
+        checkInt = setInterval(function(){
+            var curtime = currenttarget.getCurrentTime();
+            if (curtime >= timeToShowButton){
+                showButtons();
+                timeslider.width(((timeToChangeVideo-curtime)*10)+'%');
+                if(curtime >= timeToChangeVideo){
+                    makeCurrent(1);
+                    clearInterval(checkInt); 
+                }
+            }else{
+                hideButtons();
             }
-        }else{
-            hideButtons();
-        }
-    }, 40);
+        }, 40);
+    }
+    else{
+        checkInt = setInterval(function(){
+            var curtime = currenttarget.getCurrentTime();
+            if(curtime >= timeToChangeVideo){
+                    makeCurrent(1);
+                    clearInterval(checkInt); 
+            }
+        }, 500);
+    }
 }
 
 function waitForCurrentReady(){
@@ -117,12 +135,15 @@ function onPlayerStateChange(event){
 
 function makeCurrent(choicenum){
     hideButtons();
-    if(flow[currentvideonum].isEnding == true){
-        return;
-    }
     targets['currentvideo'].stopVideo();
     targets['currentvideo'].clearVideo();
     $("#currentvideo").remove();
+
+    if(flow[currentvideonum].isEnding == true){
+        $("#ending").show();
+        return;
+    }
+
     var selected;
     if(choicenum == 1){
         selected = $("#choice1video");
@@ -168,7 +189,9 @@ function loadChoices(num){
     choice2videonum = flow[currentvideonum].choice2;
 
     $("#videoholder").append("<div id='choice1video' class='choicevideos'></div>");
+    $("#choicebutton1").text(flow[num].choice1text);
     $("#videoholder").append("<div id='choice2video' class='choicevideos'></div>");
+    $("#choicebutton2").text(flow[num].choice2text);
 
     player = new YT.Player('choice1video', {
         // height: '0',
@@ -208,3 +231,5 @@ for (var i=0; i<choicebuttons.length; i++){
     choicebuttons[i].addEventListener('click', choiceButtonClick);
 }
 $("#startbutton")[0].addEventListener('click', initiallizeVideo);
+$("#restartbutton")[0].addEventListener('click', initiallizePage);
+initiallizePage();
