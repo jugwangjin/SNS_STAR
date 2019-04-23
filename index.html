@@ -1,26 +1,21 @@
-<!-- var params = { allowScriptAccess: "always" };
-var atts = { id: "player1" };
-swfobject.embedSWF("http://www.youtube.com/v/wSqdIXPnf-I?enablejsapi=1&playerapiid=player1&version=3",
-           "player1-container", "425", "356", "8", null, null, params, atts);
- -->
 <!DOCTYPE html>
-
+<meta charset='utf-8'>
 <html>
     <head>
         <link href="styles/style.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
-        <div id='greeting'>
-            <a style="font-size: 100px; position: fixed; top: 20%; width: 50%; height: 20%; color:#ffffff; background-color:#000000;">환영합니다!</a>
-            <button id='startbutton' style="font-size: 50px; position: fixed; width: 75%; height: 20%; bottom: 20%;color:#ffffff; background-color:#000000;">시작하기</button>
-        </div>
         <div id='videoholder'></div>
-        <br>
         <div id='buttonsholder'>
+            <div id='timeslider'></div>
             <button class='choicebutton' id='choicebutton1'>1</button>
             <button class='choicebutton' id='choicebutton2'>2</button>
         </div>  
+        <div id='greeting'>
+            <a id="starttext">환영합니다!</a>
+            <button id='startbutton'>시작하기</button>
+        </div>
     <script type="text/javascript" src="scripts/flow.js"></script>
     <script type="text/javascript" src="scripts/youtube.js" id='youtubescript'></script>
     </body>

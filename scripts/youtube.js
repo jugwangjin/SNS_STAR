@@ -9,7 +9,6 @@ var player;
 var currentvideonum;
 var choice1videonum;
 var choice2videonum;
-var choiceShown;
 var currentDuration;
 var youtubeReady = false;
 
@@ -17,12 +16,13 @@ var targets = [];
 var checkInt;
 var buttonVisible = true;
 
+var timeslider = $("#timeslider");
+
 function onYouTubeIframeAPIReady() {
     youtubeReady = true;
 }
-
 function initiallizeVideo(){
-    $("#greeting").remove();
+    $("#greeting").hide();
     var waitForYoutubeReady = setInterval(function(){
         if (youtubeReady==true){
             $("#currentvideo").remove();
@@ -30,8 +30,6 @@ function initiallizeVideo(){
             $("#choice2video").remove();
             $("#videoholder").append("<div id='currentvideo'></div>");
             player = new YT.Player('currentvideo', {
-                // height: '360',
-                // width: '640',
                 videoId: flow[0].videoid,
                 events: {
                     'onReady': onPlayerReady,
@@ -40,12 +38,11 @@ function initiallizeVideo(){
                 playerVars: {'controls': 0, 'fs': 0}
             });
             currentvideonum = 0;
-            choiceShown = false;
-    
+
             if(flow[0].isEnding == false)
                 waitForCurrentReady();
             loadChoices(currentvideonum);
-            clearInterval(waitForReady);
+            clearInterval(waitForYoutubeReady);
         }
     }, 100);
 }
@@ -53,19 +50,21 @@ function initiallizeVideo(){
 function checkPlayTime(){
     var currenttarget = targets['currentvideo'];
     var currentDuration = currenttarget.getDuration();
-    var timeToShowButton = currentDuration - 10;
+    var timeToShowButton = currentDuration - 11;
     var timeToChangeVideo = currentDuration - 1;
     checkInt = setInterval(function(){
-        if (currenttarget.getCurrentTime() >= timeToShowButton){
+        var curtime = currenttarget.getCurrentTime();
+        if (curtime >= timeToShowButton){
             showButtons();
-            if(currenttarget.getCurrentTime() >= timeToChangeVideo){
+            timeslider.width(((timeToChangeVideo-curtime)*10)+'%');
+            if(curtime >= timeToChangeVideo){
                 makeCurrent(1);
                 clearInterval(checkInt); 
             }
         }else{
             hideButtons();
         }
-    }, 1000);
+    }, 40);
 }
 
 function waitForCurrentReady(){
@@ -80,6 +79,7 @@ function waitForCurrentReady(){
 
 function showButtons(){
     if(buttonVisible == false){
+        timeslider.width('100%');
         $("#buttonsholder").fadeIn();
         buttonVisible = true;
     }
@@ -102,7 +102,9 @@ function onPlayerStateChange(event){
         event.target.playVideo();
     }
     else if(event.data == 3){
-        event.target.pauseVideo();
+        if(event.target != targets['currentvideo']){
+            event.target.pauseVideo();
+        }
     }
     else if(event.data == 0){
         event.target.clearVideo();
@@ -201,10 +203,8 @@ function choiceButtonClick(event){
     }
 }
 
-hideButtons();
 var choicebuttons = $(".choicebutton");
 for (var i=0; i<choicebuttons.length; i++){
     choicebuttons[i].addEventListener('click', choiceButtonClick);
 }
-$("#startbutton").addEventListener('click', initiallizeVideo);
-
+$("#startbutton")[0].addEventListener('click', initiallizeVideo);
