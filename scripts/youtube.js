@@ -11,30 +11,44 @@ var choice1videonum;
 var choice2videonum;
 var choiceShown;
 var currentDuration;
-
-function onYouTubeIframeAPIReady() {
-    $("#videoholder").append("<div id='currentvideo'></div>");
-    player = new YT.Player('currentvideo', {
-        // height: '360',
-        // width: '640',
-        videoId: flow[0].videoid,
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        },
-        playerVars: {'controls': 0, 'fs': 0}
-    });
-    currentvideonum = 0;
-    choiceShown = false;
-    
-    if(flow[0].isEnding == false)
-        waitForCurrentReady();
-    loadChoices(currentvideonum);
-}
+var youtubeReady = false;
 
 var targets = [];
 var checkInt;
 var buttonVisible = true;
+
+function onYouTubeIframeAPIReady() {
+    youtubeReady = true;
+}
+
+function initiallizeVideo(){
+    $("#greeting").remove();
+    var waitForYoutubeReady = setInterval(function(){
+        if (youtubeReady==true){
+            $("#currentvideo").remove();
+            $("#choice1video").remove();
+            $("#choice2video").remove();
+            $("#videoholder").append("<div id='currentvideo'></div>");
+            player = new YT.Player('currentvideo', {
+                // height: '360',
+                // width: '640',
+                videoId: flow[0].videoid,
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                },
+                playerVars: {'controls': 0, 'fs': 0}
+            });
+            currentvideonum = 0;
+            choiceShown = false;
+    
+            if(flow[0].isEnding == false)
+                waitForCurrentReady();
+            loadChoices(currentvideonum);
+            clearInterval(waitForReady);
+        }
+    }, 100);
+}
 
 function checkPlayTime(){
     var currenttarget = targets['currentvideo'];
