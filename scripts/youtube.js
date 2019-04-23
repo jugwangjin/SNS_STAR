@@ -13,16 +13,16 @@ var choiceShown;
 var currentDuration;
 
 function onYouTubeIframeAPIReady() {
-    $("#videoholder").append("<div id=currentvideo></div>");
+    $("#videoholder").append("<div id='currentvideo'></div>");
     player = new YT.Player('currentvideo', {
-        height: '360',
-        width: '640',
+        // height: '360',
+        // width: '640',
         videoId: flow[0].videoid,
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         },
-        playerVars: {'controls': 1, 'fs': 0}
+        playerVars: {'controls': 0, 'fs': 0}
     });
     currentvideonum = 0;
     choiceShown = false;
@@ -66,14 +66,14 @@ function waitForCurrentReady(){
 
 function showButtons(){
     if(buttonVisible == false){
-        $("#buttonsholder").show();
+        $("#buttonsholder").fadeIn();
         buttonVisible = true;
     }
 }
 
 function hideButtons(){
     if(buttonVisible == true){
-        $("#buttonsholder").hide();
+        $("#buttonsholder").fadeOut();
         buttonVisible = false;
     }
 }
@@ -126,8 +126,8 @@ function makeCurrent(choicenum){
     }
 
     selected.attr('id', 'currentvideo');
-    $("#currentvideo").attr('width', '640');
-    $("#currentvideo").attr('height', '360');
+    // $("#currentvideo").attr('width', '95%');
+    // $("#currentvideo").attr('height', '90%');
     // $("#videoholder").append($("#currentvideo"));
     loadChoices(currentvideonum);
     targets['currentvideo'].playVideo();
@@ -151,28 +151,28 @@ function loadChoices(num){
     choice1videonum = flow[currentvideonum].choice1;
     choice2videonum = flow[currentvideonum].choice2;
 
-    $("#videoholder").append("<div id=choice1video></div>");
-    $("#videoholder").append("<div id=choice2video></div>");
+    $("#videoholder").append("<div id='choice1video' class='choicevideos'></div>");
+    $("#videoholder").append("<div id='choice2video' class='choicevideos'></div>");
 
     player = new YT.Player('choice1video', {
-        height: '110',
-        width: '110',
+        // height: '0',
+        // width: '0',
         videoId: flow[flow[num].choice1].videoid,
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         },
-        playerVars: {'controls': 1, 'fs': 0}
+        playerVars: {'controls': 0, 'fs': 0}
     });
     player = new YT.Player('choice2video', {
-        height: '110',
-        width: '110',
+        // height: '0',
+        // width: '0',
         videoId: flow[flow[num].choice2].videoid,
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         },
-        playerVars: {'controls': 1, 'fs': 0}
+        playerVars: {'controls': 0, 'fs': 0}
     });
 }
 

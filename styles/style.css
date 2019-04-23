@@ -1,0 +1,50 @@
+body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-color: #000000;
+}
+#videoholder {
+    position: fixed;
+    height: 90%;
+    padding: 0;
+    margin: 0px;
+}
+#buttonsholder {
+    position: fixed;
+    width:100%!important;
+    height: 10vh;
+    padding: 0;
+    margin: 0px;
+    top: 90%;
+}
+#currentvideo {
+    position: fixed;
+    margin: 0px;
+    width:100%!important;
+    height:90vh;
+}
+.choicevideos{
+    width: 0;
+    height: 0;
+}
+.choicebutton {
+    width:50%;
+    height: 10vh;
+    background-color: #4f4f4f;
+    border-width: 0px;
+    color: #ffffff;
+}
+.choicebutton:hover {
+    background-color: #afafaf;
+}
+
+#choicebutton1 {
+    position: fixed;
+    left: 0%;
+}
+#choicebutton2 {
+    position: fixed;
+    right: 0%;
+}
