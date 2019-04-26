@@ -68,20 +68,26 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
-    font-size: 75px;
+    font-size: 50px;
 }
 .largetext{
     position: fixed;
-    top: 25%;
-    height: 25%;
+    top: 10%;
+    height: 65%;
     border: 0;
+}
+#star {
+    color:yellow; 
+    height: revert; 
+    width: revert; 
+    position:relative;
 }
 .largebutton{
     position: fixed;
-    bottom: 25%;
+    bottom: 5%;
     left: 25%;
     width: 50%;
-    height: 25%;
+    height: 20%;
 }
 .largebutton:hover{
     background-color: #afafaf;
