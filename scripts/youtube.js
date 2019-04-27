@@ -124,6 +124,11 @@ function onPlayerStateChange(event){
             event.target.pauseVideo();
         }
     }
+    else if(event.data == YT.PlayerState.PAUSED){
+        if(event.target == targets['currentvideo']){
+            event.target.playVideo();
+        }
+    }
     else if(event.data == 0){
         event.target.clearVideo();
         if(flow[currentvideonum].isEnding == false){
