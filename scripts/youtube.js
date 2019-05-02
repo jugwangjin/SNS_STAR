@@ -17,6 +17,8 @@ var checkInt;
 var buttonVisible = true;
 
 var timeslider = $("#timeslider");
+var bodyelem = document.getElementsByTagName("BODY")[0];
+var firstvideonum = '1';
 
 function onYouTubeIframeAPIReady() {
     youtubeReady = true;
@@ -30,16 +32,16 @@ function initiallizeVideo(){
             $("#choice2video").remove();
             $("#videoholder").append("<div id='currentvideo'></div>");
             player = new YT.Player('currentvideo', {
-                videoId: flow[0].videoid,
+                videoId: flow[firstvideonum].videoid,
                 events: {
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange
                 },
                 playerVars: {'controls': 0, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3}
             });
-            currentvideonum = 0;
+            currentvideonum = firstvideonum;
 
-            if(flow[0].isEnding == false)
+            if(flow[firstvideonum].isEnding == false)
                 waitForCurrentReady();
             loadChoices(currentvideonum);
             clearInterval(waitForYoutubeReady);
@@ -59,7 +61,7 @@ function checkPlayTime(){
     var currentDuration = currenttarget.getDuration();
     var timeToShowButton = currentDuration - 11;
     var timeToChangeVideo = currentDuration - 1;
-    if(flow[currentvideonum].isEnding==false){
+    if(flow[currentvideonum].isEnding==false && flow[currentvideonum].isChoice==true){
         checkInt = setInterval(function(){
             var curtime = currenttarget.getCurrentTime();
             if (curtime >= timeToShowButton){
@@ -123,9 +125,12 @@ function onPlayerStateChange(event){
         if(event.target != targets['currentvideo']){
             event.target.pauseVideo();
         }
+        else{
+            event.target.playVideo();
+        }
     }
     else if(event.data == YT.PlayerState.PAUSED){
-        if(event.target == targets['currentvideo']){
+        if(event.target == targets['currentvideo'] && buttonVisible == true){
             event.target.playVideo();
         }
     }
@@ -231,10 +236,26 @@ function choiceButtonClick(event){
     }
 }
 
+function toggleFullscreen() {
+    var doc = window.document;
+    var docEl = bodyelem;
+  
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+  
+    if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+      requestFullScreen.call(docEl);
+    }
+    else {
+      cancelFullScreen.call(doc);
+    }
+  }
+
 var choicebuttons = $(".choicebutton");
 for (var i=0; i<choicebuttons.length; i++){
     choicebuttons[i].addEventListener('click', choiceButtonClick);
 }
 $("#startbutton")[0].addEventListener('click', initiallizeVideo);
 $("#restartbutton")[0].addEventListener('click', initiallizePage);
+$("#fullscreenbutton")[0].addEventListener('click', toggleFullscreen);
 initiallizePage();
