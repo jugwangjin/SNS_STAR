@@ -37,7 +37,7 @@ function initiallizeVideo(){
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange
                 },
-                playerVars: {'controls': 0, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3}
+                playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3}
             });
             currentvideonum = firstvideonum;
 
@@ -211,7 +211,7 @@ function loadChoices(num){
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         },
-        playerVars: {'controls': 0, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3}
+        playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3}
     });
     player = new YT.Player('choice2video', {
         // height: '0',
@@ -221,7 +221,7 @@ function loadChoices(num){
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         },
-        playerVars: {'controls': 0, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3}
+        playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3}
     });
 }
 
