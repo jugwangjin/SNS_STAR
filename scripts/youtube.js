@@ -17,7 +17,7 @@ var checkInt;
 var buttonVisible = true;
 
 var timeslider = $("#timeslider");
-var htmlelem = document.getElementsByTagName("HTML")[0];
+var bodyelem = document.getElementById("pagebody");
 var firstvideonum = '1';
 
 function onYouTubeIframeAPIReady() {
@@ -238,7 +238,7 @@ function choiceButtonClick(event){
 
 function toggleFullscreen() {
     var doc = window.document;
-    var docEl = htmlelem;
+    var docEl = bodyelem;
   
     var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
     var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
