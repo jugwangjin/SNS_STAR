@@ -17,7 +17,7 @@ var checkInt;
 var buttonVisible = true;
 
 var timeslider = $("#timeslider");
-var bodyelem = document.getElementById("pagebody");
+var bodyelem = $("#pagebody")[0];
 var firstvideonum = '1';
 
 function onYouTubeIframeAPIReady() {
