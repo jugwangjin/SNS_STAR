@@ -33,7 +33,7 @@ body {
     position:fixed;
     width:5%;
     height:10%;
-    background-color: #0f0f0f;
+    background-color: #4f4f4f;
     padding:0;
     margin:0px;
     top:90%;
@@ -44,7 +44,7 @@ body {
     z-index: 5;
 }
 #fullscreenbutton:hover{
-    background: #8f8f8f;
+    background: #afafaf;
     color: #ffffff;
 }
 #currentvideo {
