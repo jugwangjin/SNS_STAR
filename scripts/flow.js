@@ -29,7 +29,7 @@ flow['2'] = {
     isEnding: false
 };
 flow['3a(2a)'] = {
-    videoid: 'ToVjSb_COmI',
+    videoid: 'fzKM1WXH734',
     choice1: '4a',
     choice1text: "스마트폰으로 검색한다",
     choice2: '7a(3b)',
@@ -38,7 +38,7 @@ flow['3a(2a)'] = {
     isEnding: false
 };
 flow['3b(9b)'] = {
-    videoid: 'ToVjSb_COmI',
+    videoid: 'Y8KcnRYaaSc',
     choice1: '4b',
     choice1text: "스마트폰으로 검색한다",
     choice2: '7b(3b)',
@@ -263,7 +263,7 @@ flow['12'] = {
     isEnding: true
 };
 flow['13'] = {
-    videoid: 'G9qwh_u3g_I',
+    videoid: '3lgDmIPR-bY',
     choice1: '7b(9a)',
     choice1text: "호텔 셔틀을 탄다",
     choice2: '3b(9b)',
