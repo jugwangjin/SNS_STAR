@@ -247,8 +247,9 @@ function toggleFullscreen() {
   
     if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
       requestFullScreen.call(docEl);
+      requestFullScreenDE.call(document.documentElement);
       document.documentElement.requestFullscreen;
-      requestFullScreenDE(document.documentElement);
+      document.documentElement.requestFullscreenDE;
     }
     else {
       cancelFullScreen.call(doc);
