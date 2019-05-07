@@ -263,4 +263,10 @@ for (var i=0; i<choicebuttons.length; i++){
 $("#startbutton")[0].addEventListener('click', initiallizeVideo);
 $("#restartbutton")[0].addEventListener('click', initiallizePage);
 $("#fullscreenbutton")[0].addEventListener('click', toggleFullscreen);
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    $("#mobilenotice").show();
+}
+else{
+    $("#mobilenotice").hide();
+}
 initiallizePage();

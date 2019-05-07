@@ -20,7 +20,7 @@ flow['1'] = {
     isEnding: false
 };
 flow['2'] = {
-    videoid: 'h4Smtrvo3zs',
+    videoid: 'LopIR2Ol0h4',
     choice1: '3a(2a)',
     choice1text: "보정된 사진",
     choice2: '9b',

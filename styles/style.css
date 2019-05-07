@@ -79,7 +79,7 @@ body {
 }
 .textandbutton * {
     position: fixed;
-    background-color: #000000;
+    background-color: #00000000;
     color: #ffffff;
     border: 0;
     left: 0;
@@ -97,6 +97,7 @@ body {
 .detailedtext{
     position: fixed;
     top:35%;
+    height:30%;
     font-size: 2vh;
 }
 #star {
@@ -105,6 +106,12 @@ body {
     width: revert; 
     position:relative;
     font-size: 1.1em;
+}
+#mobilenotice{
+    position:fixed;
+    top:65%;
+    height:10%;
+    font-size: 2vh;
 }
 .largebutton{
     position: fixed;
