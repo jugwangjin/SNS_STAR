@@ -237,46 +237,55 @@ flow['9b'] = {
 };
 flow['10'] = {
     videoid: '_Z6C3Uj2V9I',
-    choice1: '7b(9a)',
+    choice1: '15',
     choice1text: "호텔 셔틀을 탄다",
-    choice2: '3b(9b)',
+    choice2: '15',
     choice2text: "카풀 앱을 이용한다",
     isChoice: false,
-    isEnding: true
+    isEnding: false
 };
 flow['11'] = {
     videoid: 'cZCKU6TIK-U',
-    choice1: '7b(9a)',
+    choice1: '15',
     choice1text: "호텔 셔틀을 탄다",
-    choice2: '3b(9b)',
+    choice2: '15',
     choice2text: "카풀 앱을 이용한다",
     isChoice: false,
-    isEnding: true
+    isEnding: false
 };
 flow['12'] = {
-    videoid: 'Fj-6NNEJhOo',
-    choice1: '7b(9a)',
+    videoid: 'qNLU3Q8v04A',
+    choice1: '15',
     choice1text: "호텔 셔틀을 탄다",
-    choice2: '3b(9b)',
+    choice2: '15',
     choice2text: "카풀 앱을 이용한다",
     isChoice: false,
-    isEnding: true
+    isEnding: false
 };
 flow['13'] = {
     videoid: '3lgDmIPR-bY',
-    choice1: '7b(9a)',
+    choice1: '15',
     choice1text: "호텔 셔틀을 탄다",
-    choice2: '3b(9b)',
+    choice2: '15',
     choice2text: "카풀 앱을 이용한다",
     isChoice: false,
-    isEnding: true
+    isEnding: false
 };
 flow['14'] = {
     videoid: 'kvtE5oOYkyU',
+    choice1: '15',
+    choice1text: "호텔 셔틀을 탄다",
+    choice2: '15',
+    choice2text: "카풀 앱을 이용한다",
+    isChoice: false,
+    isEnding: false
+};
+flow['15'] = {
+    videoid: 'kUS0ZG7wT2A',
     choice1: '7b(9a)',
     choice1text: "호텔 셔틀을 탄다",
     choice2: '3b(9b)',
     choice2text: "카풀 앱을 이용한다",
     isChoice: false,
     isEnding: true
-};
+}
