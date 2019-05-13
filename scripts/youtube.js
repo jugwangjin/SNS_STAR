@@ -27,9 +27,11 @@ function initiallizeVideo(){
     // $("#greeting").fadeOut(function(){
         // makeCurrent(1);
     // });
+console.log("H");
     var waitForYoutubeReady = setInterval(function(){
         if (youtubeReady==true){
             $("#currentvideo").remove();
+
             $("#choice1video").remove();
             $("#choice2video").remove();
             // $("#videoholder").append("<div id='choice1video' class='choicevideos'></div>");
