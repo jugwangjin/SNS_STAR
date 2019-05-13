@@ -117,7 +117,7 @@ function showButtons(){
 
 function hideButtons(){
     if(buttonVisible == true){
-        $("#buttonsholder").fadeOut();
+        $("#buttonsholder").hide();
         buttonVisible = false;
     }
 }
