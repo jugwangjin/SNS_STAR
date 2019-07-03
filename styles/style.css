@@ -64,6 +64,7 @@ body {
     border-width: 0px;
     top: 91%;
     color: #ffffff;
+    font-size: 4vh;
 }
 .choicebutton:hover {
     background-color: #afafaf;
@@ -99,6 +100,9 @@ body {
     top:35%;
     height:30%;
     font-size: 2vh;
+}
+#instruction{
+    font-size: 1.5vh;
 }
 #star {
     color:yellow; 
