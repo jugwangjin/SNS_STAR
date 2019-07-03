@@ -131,10 +131,10 @@ function hideButtons(){
 
 function onPlayerReady(event){ 
     targets[event.target.i.id] = event.target;
-    event.target.setPlaybackQuality('hd720');
-    event.target.setPlaybackQuality('720p');
-    // event.target.setPlaybackQuality('hd1080');
-    // event.target.setPlaybackQuality('1080p');
+    // event.target.setPlaybackQuality('hd720');
+    // event.target.setPlaybackQuality('720p');
+    event.target.setPlaybackQuality('hd1080');
+    event.target.setPlaybackQuality('1080p');
     event.target.playVideo();
 }
 
@@ -144,19 +144,19 @@ function onPlayerStateChange(event){
     }
     else if(event.data == YT.PlayerState.PLAYING){
         if(event.target != targets['currentvideo']){
-            event.target.setPlaybackQuality('hd720');
-            event.target.setPlaybackQuality('720p');
-            // event.target.setPlaybackQuality('hd1080');
-            // event.target.setPlaybackQuality('1080p');
+            // event.target.setPlaybackQuality('hd720');
+            // event.target.setPlaybackQuality('720p');
+            event.target.setPlaybackQuality('hd1080');
+            event.target.setPlaybackQuality('1080p');
             event.target.pauseVideo();
         }
     }
     else if(event.data == 3){
         if(event.target != targets['currentvideo']){
-            event.target.setPlaybackQuality('hd720');
-            event.target.setPlaybackQuality('720p');
-            // event.target.setPlaybackQuality('hd1080');
-            // event.target.setPlaybackQuality('1080p');
+            // event.target.setPlaybackQuality('hd720');
+            // event.target.setPlaybackQuality('720p');
+            event.target.setPlaybackQuality('hd1080');
+            event.target.setPlaybackQuality('1080p');
             // event.target.pauseVideo();
         }
         // else{
@@ -266,16 +266,16 @@ function loadChoices(num){
             },
             playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
         });
-        player = new YT.Player('choice2video', {
-            height: '1080',
-            // width: '0',
-            videoId: flow[firstvideonum].videoid,
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            },
-            playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
-        });
+        // player = new YT.Player('choice2video', {
+        //     height: '1080',
+        //     // width: '0',
+        //     videoId: flow[firstvideonum].videoid,
+        //     events: {
+        //         'onReady': onPlayerReady,
+        //         'onStateChange': onPlayerStateChange
+        //     },
+        //     playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
+        // });
     }
     else{
         player = new YT.Player('choice1video', {
