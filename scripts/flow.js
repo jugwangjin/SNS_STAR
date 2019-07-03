@@ -137,7 +137,7 @@ flow['6b(8a)'] = {
     isEnding: false
 };
 flow['7a(3b)'] = {
-    videoid: 'zFVDXZwG2ME',
+    videoid: 'B_15JJQzdac',
     choice1: '8a(7a)',
     choice1text: "다른 사람 사진을 적당히 편집해서 쓴다",
     choice2: '6a(7b)',
@@ -164,7 +164,7 @@ flow['7a(9a)'] = {
     isEnding: false
 };
 flow['7b(3b)'] = {
-    videoid: 'zFVDXZwG2ME',
+    videoid: 'B_15JJQzdac',
     choice1: '8b(7a)',
     choice1text: "다른 사람 사진을 적당히 편집해서 쓴다",
     choice2: '6b(7b)',

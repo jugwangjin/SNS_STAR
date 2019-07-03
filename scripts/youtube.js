@@ -131,10 +131,10 @@ function hideButtons(){
 
 function onPlayerReady(event){ 
     targets[event.target.i.id] = event.target;
-    // event.target.setPlaybackQuality('hd720');
-    // event.target.setPlaybackQuality('720p');
-    event.target.setPlaybackQuality('hd1080');
-    event.target.setPlaybackQuality('1080p');
+    event.target.setPlaybackQuality('hd720');
+    event.target.setPlaybackQuality('720p');
+    // event.target.setPlaybackQuality('hd1080');
+    // event.target.setPlaybackQuality('1080p');
     event.target.playVideo();
 }
 
@@ -144,24 +144,24 @@ function onPlayerStateChange(event){
     }
     else if(event.data == YT.PlayerState.PLAYING){
         if(event.target != targets['currentvideo']){
-            // event.target.setPlaybackQuality('hd720');
-            // event.target.setPlaybackQuality('720p');
-            event.target.setPlaybackQuality('hd1080');
-            event.target.setPlaybackQuality('1080p');
+            event.target.setPlaybackQuality('hd720');
+            event.target.setPlaybackQuality('720p');
+            // event.target.setPlaybackQuality('hd1080');
+            // event.target.setPlaybackQuality('1080p');
             event.target.pauseVideo();
         }
     }
     else if(event.data == 3){
         if(event.target != targets['currentvideo']){
-            // event.target.setPlaybackQuality('hd720');
-            // event.target.setPlaybackQuality('720p');
-            event.target.setPlaybackQuality('hd1080');
-            event.target.setPlaybackQuality('1080p');
+            event.target.setPlaybackQuality('hd720');
+            event.target.setPlaybackQuality('720p');
+            // event.target.setPlaybackQuality('hd1080');
+            // event.target.setPlaybackQuality('1080p');
             // event.target.pauseVideo();
         }
-        else{
-            event.target.playVideo();
-        }
+        // else{
+        //     event.target.playVideo();
+        // }
     }
     else if(event.data == YT.PlayerState.PAUSED){
         if(event.target == targets['currentvideo'] && buttonVisible == true){
