@@ -62,8 +62,11 @@ function initiallizeVideo(){
 //     }, 100);   
 }
 function initiallizePage(){
+    $("#greeting").hide();
+    $("#ending").hide();
     var waitForYoutubeReady = setInterval(function(){
         if (youtubeReady==true){
+            $("#loading").hide();
             $("#greeting").show();
             $("#ending").hide();
             $("#currentvideo").remove();
@@ -72,7 +75,7 @@ function initiallizePage(){
             clearInterval(waitForYoutubeReady);
             loadChoices(-1);
         }
-    }, 100);  
+    }, 1000);  
 }
 
 function checkPlayTime(){
