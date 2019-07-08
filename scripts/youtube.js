@@ -62,13 +62,13 @@ function initiallizeVideo(){
 //     }, 100);   
 }
 function initiallizePage(){
-    $("#greeting").show();
-    $("#ending").hide();
-    $("#currentvideo").remove();
-    $("#choice1video").remove();
-    $("#choice2video").remove();
     var waitForYoutubeReady = setInterval(function(){
         if (youtubeReady==true){
+            $("#greeting").show();
+            $("#ending").hide();
+            $("#currentvideo").remove();
+            $("#choice1video").remove();
+            $("#choice2video").remove();
             clearInterval(waitForYoutubeReady);
             loadChoices(-1);
         }
