@@ -17,6 +17,8 @@ var checkInt;
 var buttonchosen = false;
 var buttonVisible = true;
 
+var choicenum = 1;
+
 var timeslider = $("#timeslider");
 // var bodyelem = $("#pagebody")[0];
 var firstvideonum = '1';
@@ -171,7 +173,7 @@ function onPlayerStateChange(event){
     else if(event.data == 0){
         event.target.clearVideo();
         if(flow[currentvideonum].isEnding == false){
-            makeCurrent(1);
+            makeCurrent(choicenum);
             clearInterval(checkInt); 
         }
     }
