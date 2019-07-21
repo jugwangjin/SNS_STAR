@@ -21,7 +21,6 @@ var buttonVisible = true;
 var choicenum = 1;
 
 var timeslider = $("#timeslider");
-// var bodyelem = $("#pagebody")[0];
 var firstvideonum = '1';
 
 function onYouTubeIframeAPIReady() {
@@ -30,37 +29,6 @@ function onYouTubeIframeAPIReady() {
 function initiallizeVideo(){
     $("#greeting").hide();
     makeCurrent(1);
-    // $("#greeting").fadeOut(function(){
-        // makeCurrent(1);
-    // });
-// console.log("H");
-//     var waitForYoutubeReady = setInterval(function(){
-//         if (youtubeReady==true){
-//             $("#currentvideo").remove();
-
-//             $("#choice1video").remove();
-//             $("#choice2video").remove();
-//             // $("#videoholder").append("<div id='choice1video' class='choicevideos'></div>");
-//             // player = new YT.Player('choice1video', {
-//             $("#videoholder").append("<div id='currentvideo'></div>");
-//             player = new YT.Player('currentvideo', {
-//                 height: '1080',
-//                 videoId: flow[firstvideonum].videoid,
-//                 events: {
-//                     'onReady': onPlayerReady,
-//                     'onStateChange': onPlayerStateChange
-//                 },
-//                 playerVars: {'controls': 0, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
-//             });
-//             // choice1videonum = firstvideonum;
-//             currentvideonum = firstvideonum;
-
-//             if(flow[firstvideonum].isEnding == false)
-//                 waitForCurrentReady();
-//             loadChoices(currentvideonum);
-//             clearInterval(waitForYoutubeReady);
-//         }
-//     }, 100);   
 }
 function initiallizePage(){
     $("#greeting").hide();
@@ -273,18 +241,8 @@ function loadChoices(num){
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
             },
-            playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
+            playerVars: {'controls': 0, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
         });
-        // player = new YT.Player('choice2video', {
-        //     height: '1080',
-        //     // width: '0',
-        //     videoId: flow[firstvideonum].videoid,
-        //     events: {
-        //         'onReady': onPlayerReady,
-        //         'onStateChange': onPlayerStateChange
-        //     },
-        //     playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
-        // });
     }
     else{
         player = new YT.Player('choice1video', {
@@ -295,7 +253,7 @@ function loadChoices(num){
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
             },
-            playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
+            playerVars: {'controls': 0, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
         });
         player = new YT.Player('choice2video', {
             height: '1080',
@@ -305,7 +263,7 @@ function loadChoices(num){
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
             },
-            playerVars: {'controls': 1, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
+            playerVars: {'controls': 0, 'fs': 0, 'showinfo': 0, 'rel': 0, 'playsinline': 1, 'modestbranding': 1, 'iv_load_policy': 3, 'disablekb': 1}
         });
     }   
 }
@@ -315,7 +273,7 @@ function choiceButtonClick(event){
         choicenum = 1;
         buttonchosen = true;
         hideButtons();
-        // makeCurrent(1);
+        // makeCurrent(1);  // to make it changes video instantly
         // clearInterval(checkInt);
     }
     else if(event.target.id == 'choicebutton2'){
@@ -354,10 +312,4 @@ for (var i=0; i<choicebuttons.length; i++){
 $("#startbutton")[0].addEventListener('click', initiallizeVideo);
 $("#restartbutton")[0].addEventListener('click', initiallizePage);
 $("#fullscreenbutton")[0].addEventListener('click', toggleFullscreen);
-// if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-//     $("#mobilenotice").show();
-// }
-// else{
-//     $("#mobilenotice").hide();
-// }
 initiallizePage();
