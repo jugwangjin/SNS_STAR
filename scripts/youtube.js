@@ -11,6 +11,7 @@ var choice1videonum;
 var choice2videonum;
 var currentDuration;
 var youtubeReady = false;
+var firstVideoReady = false;
 
 var targets = [];
 var checkInt;
@@ -66,14 +67,16 @@ function initiallizePage(){
     $("#ending").hide();
     var waitForYoutubeReady = setInterval(function(){
         if (youtubeReady==true){
-            $("#loading").hide();
-            $("#greeting").show();
-            $("#ending").hide();
             $("#currentvideo").remove();
             $("#choice1video").remove();
             $("#choice2video").remove();
-            clearInterval(waitForYoutubeReady);
             loadChoices(-1);
+            if(firstVideoReady==true){
+                $("#loading").hide();
+                $("#greeting").show();
+                $("#ending").hide();
+                clearInterval(waitForYoutubeReady);
+            }
         }
     }, 1000);  
 }
@@ -135,6 +138,7 @@ function hideButtons(){
 }
 
 function onPlayerReady(event){ 
+    firstVideoReady = true;
     targets[event.target.i.id] = event.target;
     // event.target.setPlaybackQuality('hd720');
     // event.target.setPlaybackQuality('720p');
