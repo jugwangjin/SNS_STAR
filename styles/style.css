@@ -123,14 +123,15 @@ body {
 }
 .largebutton{
     position: fixed;
-    border: 1px solid #afafaf;
-    top: 91%;
-    left: 0%;
-    width: 95%;
-    height: 9%;
+    background-color: yellow;
+    color: black;
+    bottom: 15%;
+    left: 41%;
+    width: 18%;
+    height: 10%;
 }
 .largebutton:hover{
-    background-color: #afafaf;
+    background-color: #cfcf00;
 }
 #timeslider{
     background-color:#ffffff;

@@ -33,6 +33,7 @@ function initiallizeVideo(){
 function initiallizePage(){
     $("#greeting").hide();
     $("#ending").hide();
+    $("#fullscreenbutton").hide();
     var waitForYoutubeReady = setInterval(function(){
         if (youtubeReady==true){
             $("#currentvideo").remove();
@@ -42,6 +43,7 @@ function initiallizePage(){
             if(firstVideoReady==true){
                 $("#loading").hide();
                 $("#greeting").show();
+                $("#fullscreenbutton").show();
                 $("#ending").hide();
                 clearInterval(waitForYoutubeReady);
             }
