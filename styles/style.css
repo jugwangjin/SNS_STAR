@@ -34,16 +34,17 @@ body {
 #fullscreenbutton {
     position:fixed;
     width:5%;
-    height:10%;
+    height:9%;
     background-color: #000000;
     padding:0;
     margin:0px;
-    top:90%;
+    top:91%;
     left:95%;
     border: 0;
     color: #ffffff;
     font-size: 1.5vh;
     z-index: 5;
+    border: 1px solid #afafaf;
 }
 #fullscreenbutton:hover{
     background: #afafaf;
@@ -96,15 +97,16 @@ body {
     top: 10%;
     height: 25%;
     border: 0;
+    font-size: 6vh;
 }
 .detailedtext{
     position: fixed;
-    top:35%;
+    top:30%;
     height:30%;
-    font-size: 2vh;
+    font-size: 3vh;
 }
 #instruction{
-    font-size: 1.5vh;
+    font-size: 2.5vh;
 }
 #star {
     color:yellow; 
@@ -121,10 +123,11 @@ body {
 }
 .largebutton{
     position: fixed;
-    bottom: 5%;
-    left: 25%;
-    width: 50%;
-    height: 20%;
+    border: 2px solid #afafaf;
+    top: 91%;
+    left: 0%;
+    width: 95%;
+    height: 9%;
 }
 .largebutton:hover{
     background-color: #afafaf;
